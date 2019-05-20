@@ -15,7 +15,7 @@ class TestHumanPlayer(unittest.TestCase):
     def test_human_player(self):
         self.assertIsInstance(self.p, HumanPlayer)
         self.assertEqual(self.p.shape, 'X')  # default shape
-        self.assertEqual(self.p.name, 'test name')
+        self.assertEqual(self.p.name, 'test name1')
 
     def test_next_move(self):
         cases = {'0,0': (0, 0), '1, 1': (1, 1), ' 2 , 1 ': (2, 1)}
