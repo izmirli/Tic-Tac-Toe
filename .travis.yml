@@ -1,1 +1,4 @@
 language: python
+script:
+  - PYTHONPATH=$PWD:$PYTHONPATH:/home/izmirli/Tic-Tac-Toe
+  - python -m unittest discover
