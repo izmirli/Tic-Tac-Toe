@@ -10,12 +10,12 @@ from board import Board
 class TestHumanPlayer(unittest.TestCase):
     def setUp(self) -> None:
         self.b = Board()
-        self.p = HumanPlayer(self.b, 'test name')
+        self.p = HumanPlayer(self.b, 'test-name')
 
     def test_human_player(self):
         self.assertIsInstance(self.p, HumanPlayer)
         self.assertEqual(self.p.shape, 'X')  # default shape
-        self.assertEqual(self.p.name, 'test name1')
+        self.assertEqual(self.p.name, 'test-name')
 
     def test_next_move(self):
         cases = {'0,0': (0, 0), '1, 1': (1, 1), ' 2 , 1 ': (2, 1)}
