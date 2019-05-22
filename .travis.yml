@@ -4,7 +4,7 @@ env:
 language: python
 python:
   - "3.7"
-  #- "3.6"
+  - "3.6"
 install:  # Install the codecov pip dependency
   - pip install codecov
 script:
@@ -14,4 +14,4 @@ script:
   #- codecov
 after_success:
   - codecov
-  - bash <(curl -s https://codecov.io/bash)
+  #- bash <(curl -s https://codecov.io/bash)
