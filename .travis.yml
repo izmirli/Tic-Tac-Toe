@@ -1,4 +1,6 @@
 dist: xenial   # required for Python >= 3.7
+env:
+  - CODECOV_TOKEN="faee6c9a-98f8-4cf8-a2fa-7c2ee10b3e9d"
 language: python
 python:
   - "3.7"
