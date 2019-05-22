@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/izmirli/Tic-Tac-Toe.svg?branch=master)](https://travis-ci.org/izmirli/Tic-Tac-Toe)
+[![codecov](https://codecov.io/gh/izmirli/Tic-Tac-Toe/branch/master/graph/badge.svg)](https://codecov.io/gh/izmirli/Tic-Tac-Toe)
 
 # Tic-Tac-Toe
 A python cli Tic-Tac-Toe game.
