@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/izmirli/Tic-Tac-Toe.svg?branch=master)](https://travis-ci.com/izmirli/Tic-Tac-Toe)
+[![Build Status](https://travis-ci.org/izmirli/Tic-Tac-Toe.svg?branch=master)](https://travis-ci.org/izmirli/Tic-Tac-Toe)
 
 # Tic-Tac-Toe
 A python cli Tic-Tac-Toe game.
@@ -14,4 +14,4 @@ The AI is based on the [Minimax algorithm](https://en.wikipedia.org/wiki/Minimax
 
 Run game by this command line:  
 `pythone tictactoe\tictactoe_game.py`  
-(Requires python 3.5+)
+(Requires python 3.6+)
