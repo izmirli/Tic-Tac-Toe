@@ -1,4 +1,17 @@
+dist: xenial   # required for Python >= 3.7
+env:
+  - CODECOV_TOKEN="faee6c9a-98f8-4cf8-a2fa-7c2ee10b3e9d"
 language: python
+python:
+  - "3.7"
+  - "3.6"
+install:  # Install the codecov pip dependency
+  - pip install codecov
 script:
-  - PYTHONPATH=$PWD:$PYTHONPATH:/home/izmirli/Tic-Tac-Toe
   - python -m unittest discover
+  #- coverage run tictactoe/tictactoe_game.py
+  #- bash <(curl -s https://codecov.io/bash)
+  #- codecov
+after_success:
+  - codecov
+  #- bash <(curl -s https://codecov.io/bash)
