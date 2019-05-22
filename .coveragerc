@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = tictactoe
+include = tictactoe/*
 
 [report]
 exclude_lines =
