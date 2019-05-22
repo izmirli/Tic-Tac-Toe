@@ -9,7 +9,7 @@ install:  # Install the codecov pip dependency
   - pip install codecov
 script:
   - python -m unittest discover
-  #- coverage run tests.py
+  - coverage run tictactoe/tictactoe_game.py
   #- bash <(curl -s https://codecov.io/bash)
   - codecov
 #after_success:
