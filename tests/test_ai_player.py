@@ -25,7 +25,7 @@ class TestAIPlayer(unittest.TestCase):
             (['O', 'X', 'O', 'X', 'X', 5, 6, 'O', 'X'], 'AI', 0),
         )
         for c in cases:
-            with self.subTest(board=c[0],player=c[1]):
+            with self.subTest(board=c[0], player=c[1]):
                 res = self.p.minmax(c[0], c[1], shapes_map)
                 self.assertEqual(res['score'], c[2])
 
