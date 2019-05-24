@@ -28,7 +28,8 @@ class TictactoeGame:
     def run_game(self):
         print('Welcome to the Tic-Tac-Toe game.')
         self.make_players_and_insert_to_queue()
-        self.clear_before_each_move = True if 'y' == input('Clear screen before each move (N/y)?').casefold() else False
+        self.clear_before_each_move = True if 'y' == input('Clear screen before each move (N/y)?').casefold() \
+            else False
         while True:
             if self.clear_before_each_move:
                 _ = os.system('clear' if 'posix' == os.name else 'cls')
@@ -41,21 +42,21 @@ class TictactoeGame:
         self.display_scoreboard()
 
     def make_players_and_insert_to_queue(self):
-        """Make human and AI Players, and insert them to the global players_queue.
+        """Make human and AI Players; insert them to the global players_queue.
 
         Prompt human player for its name and use it in its object creation.
 
         :return: None
         """
         while True:
-            number_of_human_players = input('How many human players? ')
-            if '1' == number_of_human_players or '2' == number_of_human_players:
+            num_of_human_players = input('How many human players? ')
+            if '1' == num_of_human_players or '2' == num_of_human_players:
                 break
             else:
                 print('Valid options are: 1 for Player Vs. AI or 2 for player Vs. Player.')
-        for n in range(int(number_of_human_players)):
-            human_player_name = input(f'What is your name player {n+1}? ')
-            self.players_queue.append(HumanPlayer(self.board, human_player_name))
+        for n in range(int(num_of_human_players)):
+            player_name = input(f'What is your name player {n+1}? ')
+            self.players_queue.append(HumanPlayer(self.board, player_name))
         if len(self.players_queue) == 1:
             self.players_queue.append(AIPlayer(self.board))
 

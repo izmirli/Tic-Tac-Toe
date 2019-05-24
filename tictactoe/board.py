@@ -66,7 +66,7 @@ class Board:
         will be returned as ['X', 'O', 'X', 3, 'X', 5, 'O', 7, 'O']
         :return: list representing the board with 9 indexes.
         """
-        return [self.board[y][x] if self.board[y][x] != ' ' else y*3+x for y in range(3) for x in range(3)]
+        return [self.board[y][x] if self.board[y][x] != ' ' else y * 3 + x for y in range(3) for x in range(3)]
 
     @staticmethod
     def list_index_to_board_coordinates(index):

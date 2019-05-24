@@ -7,7 +7,6 @@ class AIPlayer(Player):
     def __init__(self, board, shape='O'):
         super().__init__(board, shape)
         self.name = "Bot"
-        self.moves_score_cache = {}
 
     def next_move(self):
         """Compute next move coordinates using minimax algorithm.
@@ -43,15 +42,9 @@ class AIPlayer(Player):
             move = {'index': move_index}
             move_board = new_board.copy()
             move_board[move_index] = shapes_map[player]
-            move_hash = hash(tuple(move_board)) & hash(shapes_map['AI' if 'AI' != player else 'HUM'])
-            if move_hash in self.moves_score_cache and False:
-                move['score'] = self.moves_score_cache[move_hash]
-                moves.append(move)
-                continue
             minmax_res = self.minmax(move_board, 'AI' if 'AI' != player else 'HUM', shapes_map)
             move['score'] = minmax_res['score']
             moves.append(move)
-            self.moves_score_cache[move_hash] = move['score']
 
         best_move = None
         best_score = -100 if 'AI' == player else 100
