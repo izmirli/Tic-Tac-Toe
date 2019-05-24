@@ -1,5 +1,6 @@
 dist: xenial   # required for Python >= 3.7
-language: python 3.6
+language: python
+python: 3.7
 matrix:
   include:
     - name: "Python 3.7 on Xenial Linux"
@@ -8,7 +9,7 @@ matrix:
       dist: xenial          # required for Python >= 3.7
     - name: "Python 3.7 on macOS"
       os: osx
-      osx_image: xcode10.14.3  # Python 3.7.2 running on macOS 10.14.3
+      osx_image: xcode10.2  # Python 3.7.2 running on macOS 10.14.3
       language: shell       # 'language: python' is an error on Travis CI macOS
     - name: "Python 3.7 on Windows"
       python: 3.7
