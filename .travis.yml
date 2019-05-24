@@ -6,17 +6,18 @@ matrix:
       os: linux
       dist: xenial          # required for Python >= 3.7
     - name: "Python 3.7 on macOS"
+      python: 3.7
       os: osx
       osx_image: xcode10.2  # Python 3.7.2 running on macOS 10.14.3
       language: shell       # 'language: python' is an error on Travis CI macOS
     - name: "Python 3.7 on Windows"
+      python: 3.7
       os: windows           # Windows 10.0.17134 N/A Build 17134
       language: shell       # 'language: python' is an error on Travis CI Windows
       before_install: choco install python
       env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
 install:
-  - pip3 install --upgrade pip
-  - pip3 install pycodestyle
+  - pip install pycodestyle
 script:
   - python -m unittest discover
 after_success:
