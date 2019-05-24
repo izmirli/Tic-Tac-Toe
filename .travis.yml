@@ -1,10 +1,23 @@
-dist: xenial   # required for Python >= 3.7
 language: python
-python:
-  - "3.7"
-  - "3.6"
+matrix:
+  include:
+    - name: "Python 3.7 on Xenial Linux"
+      python: 3.7           # this works for Linux but is ignored on macOS or Windows
+      os: linux
+      dist: xenial          # required for Python >= 3.7
+    - name: "Python 3.7 on macOS"
+      os: osx
+      osx_image: xcode10.2  # Python 3.7.2 running on macOS 10.14.3
+      language: shell       # 'language: python' is an error on Travis CI macOS
+    - name: "Python 3.7 on Windows"
+      os: windows           # Windows 10.0.17134 N/A Build 17134
+      language: shell       # 'language: python' is an error on Travis CI Windows
+      before_install: choco install python
+      env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
 install:
-  - pip install pycodestyle
+  - pip3 install --upgrade pip
+  - pip3 install pycodestyle
 script:
   - python -m unittest discover
+after_success:
   - pycodestyle --statistics -q --max-line-length=120 --ignore=E402,W291 --count .
